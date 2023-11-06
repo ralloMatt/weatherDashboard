@@ -124,7 +124,7 @@ function getWeather(lat, lon){ // Get weather data from API
     });
 
     // get the five day forecast
-    var weatherUrlFiveDay = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKEY + "&units=imperial";
+    var weatherUrlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKEY + "&units=imperial";
 
     fetch(weatherUrlFiveDay) // send out request and fetch should return an object
     .then(function (response) {
@@ -137,7 +137,7 @@ function getWeather(lat, lon){ // Get weather data from API
 
 function findCity(city){ // get city data from API
     // creat URL using city name and API key
-    var geoCodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + APIKEY;
+    var geoCodeUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + APIKEY;
     
     //First get coordinates
     fetch(geoCodeUrl) // send out request and fetch should return an object
