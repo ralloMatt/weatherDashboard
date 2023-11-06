@@ -26,6 +26,11 @@ main {
     margin-top: 10px;
 }
 
-.cardBackground{
+.cardBackgroundToday {
     background-color: rgb(184, 183, 182);
+}
+
+.cardBackgroundFiveDay {
+    background-color: rgb(67, 67, 250);
+    color: white;
 }
