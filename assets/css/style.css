@@ -1,0 +1,24 @@
+h1 {
+    padding: 20px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+main {
+    display: table; /* Set display to table so heights match to each column */
+}
+
+.addHeight {
+    display: table-cell; /* Set table to tables display to gte heights to match */
+    margin: 5px;
+    height: 500px;
+}
+
+.borderBottom {
+    border-bottom: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
