@@ -17,12 +17,13 @@
 
     <main class="row justify-content-center">
         <section class="col-4 border border-dark border-4 addHeight rounded">
-            <form>
+            <form id="searchForm">
                 <h2 class="form-label">Search for a City: </h2>
-                <input class="form-control">
+                <input class="form-control" id="formInput">
                 <button type="submit" class="btn btn-primary">Search</button>
                 <h4 class="borderBottom"></h4>
             </form>
+            <section id="searchHistory"></section> <!-- Where the search history buttons will be displayed-->
         </section>
 
         <section class="col-7 border border-dark border-4 addHeight rounded">
