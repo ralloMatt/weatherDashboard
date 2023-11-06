@@ -12,11 +12,23 @@
 
   <body>
     <header>
-        <h1>Weather Dashboard</h1>
+        <h1 class="bg-primary text-light text-center">Weather Dashboard</h1>
     </header>
 
-    <main>
+    <main class="row justify-content-center">
+        <section class="col-4 border border-dark border-4 addHeight rounded">
+            <form>
+                <h2 class="form-label">Search for a City: </h2>
+                <input class="form-control">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <h4 class="borderBottom"></h4>
+            </form>
+        </section>
 
+        <section class="col-7 border border-dark border-4 addHeight rounded">
+            <h1>Today's Weather</h1>
+
+        </section>
     </main>
 
 
