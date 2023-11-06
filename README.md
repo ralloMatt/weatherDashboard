@@ -10,7 +10,17 @@ https://rallomatt.github.io/weatherDashboard/
 
 ## Screenshot
 
+![alt text](assets/images/weatherDashboard1.png)
 
+![alt text](assets/images/weatherDashboard2.png)
+
+![alt text](assets/images/weatherDashboard3.png)
+
+![alt text](assets/images/weatherDashboard4.png)
+
+![alt text](assets/images/weatherDashboard5.png)
+
+![alt text](assets/images/weatherDashboard6.png)
 
 ## Credits
 
