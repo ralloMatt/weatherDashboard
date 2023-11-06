@@ -12,7 +12,7 @@
 
   <body>
     <header>
-        <h1 class="bg-primary text-light text-center">Weather Dashboard</h1>
+        <h1 class="bg-primary text-light text-center headerText">Weather Dashboard</h1>
     </header>
 
     <main class="row justify-content-center">
@@ -27,8 +27,18 @@
         </section>
 
         <section class="col-7 border border-dark border-4 addHeight rounded">
-            <h1>Today's Weather</h1>
+            <h2 id="infoText" class="bg-warning addSpacing">Please Search or Select a City</h2>
+            <h1>Today's Weather:</h1>
 
+            <section class="card addSpacing cardBackground">
+                <section class="card-body" id="todayWeather"></section>
+            </section>
+
+            <h1>5 Day Forecast: </h1>
+
+            <section class="card addSpacing cardBackground">
+                <section class="card-body"></section>
+            </section>
         </section>
     </main>
 
@@ -41,7 +51,7 @@
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
-    ></script> <!-- Link bootstrap -->
+    ></script> <!-- Link day js -->
 
     <script src="./assets/js/script.js"></script> <!-- Link javascript file -->
   </body>
