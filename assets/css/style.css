@@ -2,7 +2,7 @@ h1 {
     padding: 20px;
 }
 
-button {
+button { /*Makes buttons spaced out nicely */
     margin-top: 10px;
     width: 100%;
 }
@@ -14,11 +14,10 @@ main {
 .addHeight {
     display: table-cell; /* Set table to tables display to gte heights to match */
     margin: 5px;
-    height: 500px;
+    padding-bottom: 10px;
 }
 
-.borderBottom {
+.borderBottom { /* Adds a bottom border */
     border-bottom: 2px solid black;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
