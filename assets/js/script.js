@@ -3,6 +3,7 @@ var userInput = document.getElementById("formInput"); // get the input user type
 var buttonList = document.getElementById("searchHistory"); // get the container for the search history
 var infoText = document.getElementById("infoText");
 var todayWeather = document.getElementById("todayWeather");
+var fiveDayForecast = document.getElementById("fiveDayForecast");
 
 var APIKEY = "b3712b4761003710bde48a0606fe6822"; //API key for Open Weather Map
 
@@ -47,6 +48,67 @@ function displayTodaysWeather(cityWeather){ // display the weather from said cit
     todayWeather.append(todayInformation);
 }
 
+function displayFiveDayForecast(cityWeatherFiveDay){ // display the five day forcast of selected city
+
+    // remove any information that may be there (so I don't display multiple entries)
+    if(document.getElementById("fiveDayInfo")){ 
+        document.getElementById("fiveDayInfo").remove();
+    }
+
+    var fiveDayInfo = document.createElement("section");
+    fiveDayInfo.id = "fiveDayInfo";
+    fiveDayInfo.classList.add("row"); // make it a row, so I can add the five days as columns
+
+    
+    for(var i = 0; i < cityWeatherFiveDay.list.length; i += 8){
+
+        var dayColumnCard = document.createElement("section"); // make it a column
+        dayColumnCard.classList.add("col");
+        dayColumnCard.classList.add("border");
+        dayColumnCard.classList.add("border-dark");
+        dayColumnCard.classList.add("border-2");
+        dayColumnCard.style.margin = "5px";
+        dayColumnCard.style.textAlign = "center";
+
+
+        // First get date from data
+        var fullDate = cityWeatherFiveDay.list[i].dt_txt;
+        var month = fullDate.slice(5, 7);
+        var day = fullDate.slice(8,10);
+        var year = fullDate.slice(0, 4);
+        
+        var dateDisplay = document.createElement("h4");
+        dateDisplay.textContent = month + "/" + day + "/" + year;
+
+        dayColumnCard.append(dateDisplay);
+
+        // get icon
+        var iconNum = cityWeatherFiveDay.list[i].weather[0].icon;
+        var iconUrl = "https://openweathermap.org/img/wn/" + iconNum + "@2x.png";
+        var iconImg = document.createElement("img");
+        iconImg.setAttribute("src", iconUrl);
+        dayColumnCard.append(iconImg);
+
+        // get temp, wind, and humidity
+        var temp = document.createElement("p");
+        temp.textContent = "Temp: " + cityWeatherFiveDay.list[i].main.temp + " \u00B0F";
+        dayColumnCard.append(temp);
+    
+        var wind = document.createElement("p");
+        wind.textContent = "Wind: " + cityWeatherFiveDay.list[i].wind.speed + " MPH";
+        dayColumnCard.append(wind);
+    
+        var humidity = document.createElement("p");
+        humidity.textContent = "Humidity: " + cityWeatherFiveDay.list[i].main.humidity + " %";
+        dayColumnCard.append(humidity);
+    
+        // append column card to section
+        fiveDayInfo.append(dayColumnCard);
+    }
+
+    fiveDayForecast.append(fiveDayInfo);
+}
+
 function getWeather(lat, lon){ // Get weather data from API
     // Now that we have Coordinates, find the weather dude!
 
@@ -61,8 +123,6 @@ function getWeather(lat, lon){ // Get weather data from API
         displayTodaysWeather(data);
     });
 
-
-    /*
     // get the five day forecast
     var weatherUrlFiveDay = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKEY + "&units=imperial";
 
@@ -73,8 +133,6 @@ function getWeather(lat, lon){ // Get weather data from API
     .then(function (data) {  
         displayFiveDayForecast(data);
     });
-    */
-
 }
 
 function findCity(city){ // get city data from API
